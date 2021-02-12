@@ -40,6 +40,7 @@ class CartModel extends Model {
   void clearCart() {
     cart.forEach((f) => f.qty = 1);
     cart = [];
+    totalCartValue =0;
     notifyListeners();
   }
 

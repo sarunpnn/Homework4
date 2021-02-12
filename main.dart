@@ -34,8 +34,14 @@ class ListScreen extends StatelessWidget {
       backgroundColor: Colors.orange[50],
         appBar: AppBar(
           backgroundColor: Colors.lightGreen[300],
-          title: Text('CarShop'+'      Total: '+ ScopedModel.of<CartModel>(context,rebuildOnChange: true).totalCartValue.toString()+' Bath' ),
+          title: Text('CarShop'+'Total:'+ ScopedModel.of<CartModel>(context,rebuildOnChange: true).totalCartValue.toString()+'฿' ),
           actions: <Widget>[
+            FlatButton(
+                child: Text(
+                  "Clear",
+                  style: TextStyle(color: Colors.white),
+                ),
+                onPressed: () => ScopedModel.of<CartModel>(context).clearCart()),
             IconButton(
               icon: Icon(Icons.shopping_cart),
               onPressed: () => Navigator.pushNamed(context, '/cart'),
